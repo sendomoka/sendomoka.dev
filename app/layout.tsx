@@ -6,6 +6,7 @@ import { ThemeProvider } from './components/ThemeContext'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Outfit } from 'next/font/google'
+import React from 'react'
 
 const outfit = Outfit({ subsets: ['latin'] })
 
@@ -61,4 +62,4 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   )
 }
 
-export default RootLayout
+export default React.memo(RootLayout)
