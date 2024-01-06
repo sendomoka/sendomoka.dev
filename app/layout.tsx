@@ -11,6 +11,13 @@ const outfit = Outfit({ subsets: ['latin'] })
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   const [loading, setLoading] = useState(true)
+  const SpinnerLoading = () => {
+    return (
+      <div className="flex justify-center items-center w-screen h-screen bg-[#171717]">
+        <Spinner width={50} height={50} color="white" />
+      </div>
+    )
+  }
 
   useEffect(() => {
     const handleLoad = () => {
@@ -31,11 +38,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <title>Sendomoka - Personal Website | Jehian</title>
       <ThemeProvider>
         <body className={outfit.className}>
-            {loading && (
-              <div className="flex justify-center items-center w-screen h-screen bg-[#171717]">
-                <Spinner width={50} height={50} color="white" />
-              </div>
-            )}
+            {loading && <SpinnerLoading />}
             {!loading && children}
           <Analytics />
           <SpeedInsights />
