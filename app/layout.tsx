@@ -20,12 +20,16 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   }
 
   useEffect(() => {
-    const handleLoad = () => {
-      setTimeout(() => {
+    const handleLoad = async () => {
+      try {
+        await new Promise((resolve) => setTimeout(resolve, 1000))
         setLoading(false)
-      }, 1000)
+      } catch (error) {
+        console.error(error)
+        setLoading(false)
+      }
     }
-
+    
     window.addEventListener('load', handleLoad)
 
     return () => {
