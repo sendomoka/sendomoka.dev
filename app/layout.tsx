@@ -11,6 +11,7 @@ const outfit = Outfit({ subsets: ['latin'] })
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   const [loading, setLoading] = useState(true)
+  let loaded = false
   const SpinnerLoading = () => {
     return (
       <div className="flex justify-center items-center w-screen h-screen bg-[#171717]">
@@ -20,13 +21,21 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   }
 
   useEffect(() => {
-    const handleLoad = async () => {
-      try {
-        await new Promise((resolve) => setTimeout(resolve, 1000))
-        setLoading(false)
-      } catch (error) {
-        console.error(error)
-        setLoading(false)
+    // const handleLoad = async () => {
+    //   try {
+    //     await new Promise((resolve) => setTimeout(resolve, 1000))
+    //     setLoading(false)
+    //   } catch (error) {
+    //     console.error(error)
+    //     setLoading(false)
+    //   }
+    // }
+    const handleLoad = () => {
+      if (!loaded) {
+        setTimeout(() => {
+          setLoading(false)
+          loaded = true
+        }, 1000)
       }
     }
     

@@ -11,11 +11,11 @@ import {
 
 const Navigation = () => {
   const navData = [
-    { label: 'Home', icon: <FaHome />, route: '/' },
-    { label: 'Blog', icon: <FaStickyNote />, route: '/blog' },
-    { label: 'Projects', icon: <FaRocket />, route: '/projects' },
-    { label: 'About', icon: <FaUser />, route: '/about' },
-    { label: 'Contact', icon: <FaFeatherAlt />, route: '/contact' },
+    { label: 'Home', icon: <FaHome />, route: '' },
+    { label: 'Blog', icon: <FaStickyNote />, route: '' },
+    { label: 'Projects', icon: <FaRocket />, route: '' },
+    { label: 'About', icon: <FaUser />, route: '' },
+    { label: 'Contact', icon: <FaFeatherAlt />, route: '' },
   ]
   return (
     <Box>
