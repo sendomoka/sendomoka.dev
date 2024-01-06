@@ -11,3 +11,11 @@
   color: rgb(23, 23, 23);
   background: rgb(240, 240, 240);
 }
+
+.fade {
+  transition: opacity 1s ease-in-out;
+}
+
+.loading {
+  opacity: 0;
+}
