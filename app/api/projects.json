@@ -16,5 +16,14 @@
         "repo": "https://github.com/sendomoka/jbkons-web",
         "image": "/img/jbkons.png",
         "tags": ["react", "nextjs", "tailwindcss", "vercel"]
+    },
+    {
+        "id": "3",
+        "title": "zeta voicepack",
+        "desc": "just a a leisure and my haluness",
+        "link": "https://zeta-voicepack.vercel.app",
+        "repo": "https://github.com/sendomoka/zeta-voicepack",
+        "image": "/img/zeta.png",
+        "tags": ["html", "css", "vercel"]
     }
 ]

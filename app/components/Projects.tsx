@@ -1,49 +1,54 @@
-'use client'
-import { Box, Heading } from '@chakra-ui/react'
 import React from 'react'
+import { Heading, Box, Image, Text, Link, Button, Tag, HStack } from '@chakra-ui/react'
+import { RiGitRepositoryFill } from 'react-icons/ri'
+import { FiExternalLink } from 'react-icons/fi'
 
-const Projects = () => {
-    const [isScaled, setIsScaled] = React.useState(false)
-    const [isMobile, setIsMobile] = React.useState(false)
+interface Project {
+    id: string
+    title: string
+    desc: string
+    link: string
+    repo: string
+    image: string
+    tags: string[]
+}
 
-    React.useEffect(() => {
-        function handleResize() {
-            if (window.innerWidth < 1166) {
-                setIsScaled(true)
-            } else {
-                setIsScaled(false)
-            }
-            if (window.innerWidth < 600) {
-                setIsMobile(true)
-            } else {
-                setIsMobile(false)
-            }
-        }
+const getProjects = async (): Promise<Project[]> => {
+    const res = await fetch('https://raw.githubusercontent.com/sendomoka/sendomoka.dev/main/app/api/projects.json')
+    if (!res.ok) {
+        throw new Error('Failed to fetch projects')
+    }
+    return res.json()
+}
 
-        window.addEventListener('resize', handleResize)
-
-        handleResize()
-
-        return () => window.removeEventListener('resize', handleResize)
-    }, [])
+const Projects = async () => {
+    const projects: Project[] = await getProjects()
     return (
-        <Box
-            w={isScaled ? '90vw' : '100%'}
-            h={isMobile ? 'auto' : '70vh'}
-            paddingX={isScaled ? 0 : 200}
-            display='flex'
-            justifyContent='center'
-            alignItems='start'
-            flexDirection='column'
-            marginLeft={isScaled ? 20 : 0}
-            marginRight={isScaled ? -70 : 0}
-            id='projects'
-        >
-            <Heading size='lg' fontSize='30px' lineHeight='1.1' fontWeight='bold' marginBottom={20}>
-                Projects
-            </Heading>
-            
-        </Box>
+        <div id='projects' className='mx-5 my-40 lg:mx-[200px]'>
+            <Heading size='lg' fontSize={30} lineHeight='1.1' fontWeight='bold' marginBottom={20}>Projects</Heading>
+            <div className='flex gap-4 flex-col lg:flex-row mt-10'>
+                {projects.map((project) => (
+                    <Box border='1.5px solid' borderColor='light' borderRadius={7} padding={20} key={project.id}>
+                        <Image width={250} margin='auto' src={project.image} alt={project.title} />
+                        <Heading size='lg' fontSize={20} lineHeight='1.1' fontWeight='bold' marginY={10}>{project.title}</Heading>
+                        <Text>{project.desc}</Text>
+                        <HStack spacing={6}>
+                            {project.tags.map((tag) => (
+                                <Tag opacity='0.5' key={tag}>{tag}</Tag>
+                            ))}
+                        </HStack>
+                        <Box display='flex' justifyContent='space-between' alignItems='center' marginTop={10}>
+                            <Link href={project.link}>
+                                <Button rightIcon={<FiExternalLink />} size='md'>view</Button>
+                            </Link>
+                            <Link href={project.repo}>
+                                <Button rightIcon={<RiGitRepositoryFill />} size='md'>repo</Button>
+                            </Link>
+                        </Box>
+                    </Box>
+                ))}
+            </div>
+        </div>
     )
 }
 
