@@ -28,16 +28,16 @@ const Projects = async () => {
             <Heading size='lg' fontSize={30} lineHeight='1.1' fontWeight='bold' marginBottom={20}>Projects</Heading>
             <div className='flex gap-4 flex-col lg:flex-row mt-10'>
                 {projects.map((project) => (
-                    <Box border='1.5px solid' borderColor='light' borderRadius={7} padding={20} key={project.id}>
+                    <Box display='flex' flexDirection='column' justifyContent='space-between' gap={6} border='1.5px solid' borderColor='light' borderRadius={7} padding={20} key={project.id}>
                         <Image width={250} margin='auto' src={project.image} alt={project.title} />
-                        <Heading size='lg' fontSize={20} lineHeight='1.1' fontWeight='bold' marginY={10}>{project.title}</Heading>
-                        <Text>{project.desc}</Text>
+                        <Heading size='lg' fontSize={20} lineHeight={1.2} fontWeight='bold'>{project.title}</Heading>
+                        <Text lineHeight={1.2}>{project.desc}</Text>
                         <HStack spacing={6}>
                             {project.tags.map((tag) => (
                                 <Tag opacity='0.5' key={tag}>{tag}</Tag>
                             ))}
                         </HStack>
-                        <Box display='flex' justifyContent='space-between' alignItems='center' marginTop={10}>
+                        <Box display='flex' justifyContent='space-between' alignItems='center'>
                             <Link href={project.link}>
                                 <Button rightIcon={<FiExternalLink />} size='md'>view</Button>
                             </Link>
