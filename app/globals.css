@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  scroll-behavior: smooth;
+}
+
 html, .dark {
   color: rgb(240, 240, 240);
   background: rgb(23, 23, 23);
@@ -18,4 +22,18 @@ html, .dark {
 
 .loading {
   opacity: 0;
+}
+
+::selection {
+  background-color: rgba(136, 190, 255, 0.3);
+}
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #afafaf;
+  border-radius: 16px;
+}
+::-webkit-scrollbar-button {
+  display:none;
 }

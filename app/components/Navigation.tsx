@@ -10,17 +10,24 @@ import {
 } from 'react-icons/fa'
 
 const Navigation = () => {
+  const scrollToSection = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>, route: string) => {
+    event.preventDefault()
+    const element = document.getElementById(route.substring(1))
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
   const navData = [
-    { label: 'Home', icon: <FaHome />, route: '' },
+    { label: 'Home', icon: <FaHome />, route: '/' },
+    { label: 'Projects', icon: <FaRocket />, route: '#projects' },
     { label: 'Blog', icon: <FaStickyNote />, route: '' },
-    { label: 'Projects', icon: <FaRocket />, route: '' },
     { label: 'About', icon: <FaUser />, route: '' },
     { label: 'Contact', icon: <FaFeatherAlt />, route: '' },
   ]
   return (
     <Box>
       {navData.map(({ label, icon, route }, index) => (
-        <Link key={index} href={route}>
+        <Link key={index} href={route} onClick={(event) => scrollToSection(event, route)}>
           <Tooltip label={label} aria-label={label}>
             <IconButton
               aria-label={label}

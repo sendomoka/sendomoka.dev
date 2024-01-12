@@ -1,0 +1,20 @@
+[
+    {
+        "id": "1",
+        "title": "sendomoka",
+        "desc": "my personal dev website",
+        "link": "https://sendomoka.dev",
+        "repo": "https://github.com/sendomoka/sendomoka.dev",
+        "image": "/img/sendomoka.png",
+        "tags": ["react", "nextjs", "chakraui", "vercel"]
+    },
+    {
+        "id": "2",
+        "title": "jbkons",
+        "desc": "architect consultant company profile",
+        "link": "https://jbkons.vercel.app",
+        "repo": "https://github.com/sendomoka/jbkons-web",
+        "image": "/img/jbkons.png",
+        "tags": ["react", "nextjs", "tailwindcss", "vercel"]
+    }
+]
