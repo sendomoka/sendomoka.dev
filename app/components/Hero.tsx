@@ -1,5 +1,5 @@
 'use client'
-import { Box, Heading, Image, Text, Tooltip, Flex, IconButton, Link } from '@chakra-ui/react'
+import { Box, Heading, Image, Text, Tooltip, IconButton, Link } from '@chakra-ui/react'
 import React from 'react'
 import { FaLinkedin, FaGithub, FaInstagram, FaMedium } from 'react-icons/fa'
 import { FaXTwitter, FaDribbble } from 'react-icons/fa6'

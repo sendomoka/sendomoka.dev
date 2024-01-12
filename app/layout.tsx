@@ -10,10 +10,10 @@ const outfit = Outfit({ subsets: ['latin'] })
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
-      <title>Sendomoka - Personal Website | Jehian</title>
+      <title>Sendomoka - Personal Dev Website | Jehian</title>
       <ThemeProvider>
         <body className={outfit.className}>
-            <Fade in={true} transition={{ enter: { duration: 0.5 } }}>
+            <Fade in={true} transition={{ enter: { duration: 1 } }}>
             {children}
             </Fade>
           <Analytics />
