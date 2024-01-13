@@ -1,0 +1,21 @@
+[
+    {
+        "id": "1",
+        "name": "Nicholas Hasian",
+        "username": "@sharclen5",
+        "role": "Frontend Engineer",
+        "link": {
+            "github": "https://github.com/sharclen5"
+        }
+    },
+    {
+        "id": "2",
+        "name": "Dzakwan Irfan",
+        "username": "@dzakone",
+        "role": "Backend Engineer",
+        "link": {
+            "github": "https://github.com/dzakwanIrfan",
+            "website": "https://dzakwan-irfan.vercel.app"
+        }
+    }
+]

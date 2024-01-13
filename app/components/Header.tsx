@@ -1,5 +1,5 @@
 'use client'
-import { Box, Flex } from '@chakra-ui/react'
+import { Box, Flex, Tooltip, IconButton } from '@chakra-ui/react'
 import Link from 'next/link'
 import { useContext } from 'react'
 import Navigation from './Navigation'
@@ -8,6 +8,7 @@ import LogoDark from '../svgs/LogoDark'
 import LogoLight from '../svgs/LogoLight'
 import { ThemeContext } from './ThemeContext'
 import React from 'react'
+import { FaFeatherAlt } from 'react-icons/fa'
 
 const Header = () => {
   const { isDarkMode, toggleTheme } = useContext(ThemeContext)
@@ -55,6 +56,16 @@ const Header = () => {
         <Flex alignItems="center" gap={4}>
           <Flex display={isMobile ? 'none' : 'flex'}>
             <Navigation />
+            <Link href='https://docs.google.com/document/d/11toX1S3X_nk3aBPRvYx2_kCpv_LoJHKYF_q9RFxA5j8/edit?usp=sharing' target='_blank'>
+              <Tooltip label='Resume' aria-label='Resume'>
+                <IconButton
+                  aria-label='Resume'
+                  icon={<FaFeatherAlt />}
+                  variant="ghost"
+                  marginLeft={20}
+                />
+              </Tooltip>
+            </Link>
           </Flex>
           <Flex>
             <ThemeToggle

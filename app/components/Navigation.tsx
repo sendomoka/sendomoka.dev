@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { Box, IconButton, Tooltip } from '@chakra-ui/react'
 import {
   FaStickyNote,
-  FaFeatherAlt,
   FaHome,
   FaRocket,
   FaUser,
@@ -20,9 +19,7 @@ const Navigation = () => {
   const navData = [
     { label: 'Home', icon: <FaHome />, route: '/' },
     { label: 'Projects', icon: <FaRocket />, route: '#projects' },
-    { label: 'Blog', icon: <FaStickyNote />, route: '' },
-    { label: 'About', icon: <FaUser />, route: '' },
-    { label: 'Contact', icon: <FaFeatherAlt />, route: '' },
+    { label: 'Friends', icon: <FaUser />, route: '#friends' },
   ]
   return (
     <Box>

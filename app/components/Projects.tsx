@@ -1,7 +1,7 @@
 import React from 'react'
-import { Heading, Box, Image, Text, Link, Button, Tag, HStack } from '@chakra-ui/react'
-import { RiGitRepositoryFill } from 'react-icons/ri'
+import { Heading, Box, Image, Text, Link, Tag, HStack } from '@chakra-ui/react'
 import { FiExternalLink } from 'react-icons/fi'
+import { FaCodeBranch } from 'react-icons/fa'
 
 interface Project {
     id: string
@@ -26,23 +26,50 @@ const Projects = async () => {
     return (
         <div id='projects' className='mx-5 my-40 lg:mx-[200px]'>
             <Heading size='lg' fontSize={30} lineHeight='1.1' fontWeight='bold' marginBottom={20}>Projects</Heading>
+            <Text marginTop={-10} marginBottom={10} opacity={0.7}>Here are some of my projects that I have worked on.</Text>
             <div className='flex gap-4 flex-col lg:flex-row mt-10'>
                 {projects.map((project) => (
                     <Box display='flex' flexDirection='column' justifyContent='space-between' gap={6} border='1.5px solid' borderColor='light' borderRadius={7} padding={20} key={project.id}>
                         <Image width={250} margin='auto' src={project.image} alt={project.title} />
                         <Heading size='lg' fontSize={20} lineHeight={1.2} fontWeight='bold'>{project.title}</Heading>
-                        <Text lineHeight={1.2}>{project.desc}</Text>
+                        <Text fontSize={14}>{project.desc}</Text>
                         <HStack spacing={6}>
                             {project.tags.map((tag) => (
-                                <Tag opacity='0.5' key={tag}>{tag}</Tag>
+                                <Tag opacity='0.5' fontSize={14} key={tag}>{tag}</Tag>
                             ))}
                         </HStack>
                         <Box display='flex' justifyContent='space-between' alignItems='center'>
-                            <Link href={project.link}>
-                                <Button rightIcon={<FiExternalLink />} size='md'>view</Button>
+                            <Link href={project.link} target='_blank'>
+                                <Box
+                                    as='button'
+                                    display='inline-flex'
+                                    alignItems='center'
+                                    justifyContent='center'
+                                    transition='0.3s'
+                                    _hover={{
+                                        transform: 'translateY(-3px)',
+                                        textDecoration: 'underline'
+                                    }}
+                                >
+                                    view
+                                    <FiExternalLink className='ml-2' />
+                                </Box>
                             </Link>
-                            <Link href={project.repo}>
-                                <Button rightIcon={<RiGitRepositoryFill />} size='md'>repo</Button>
+                            <Link href={project.repo} target='_blank'>
+                                <Box
+                                    as='button'
+                                    display='inline-flex'
+                                    alignItems='center'
+                                    justifyContent='center'
+                                    transition='0.3s'
+                                    _hover={{
+                                        transform: 'translateY(-3px)',
+                                        textDecoration: 'underline'
+                                    }}
+                                >
+                                    repo
+                                    <FaCodeBranch className='ml-2' />
+                                </Box>
                             </Link>
                         </Box>
                     </Box>
