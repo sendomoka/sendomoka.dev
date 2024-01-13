@@ -1,23 +1,32 @@
 [
-    {
-        "id": "1",
-        "image": "https://avatars.githubusercontent.com/u/116086341?v=4",
-        "name": "Nicholas Hasian",
-        "username": "@sharclen5",
-        "role": "Frontend Engineer",
-        "links": {
-            "github": "https://github.com/sharclen5"
-        }
-    },
-    {
-        "id": "2",
-        "image": "https://avatars.githubusercontent.com/u/66806914?v=4",
-        "name": "Dzakwan Irfan",
-        "username": "@dzakone",
-        "role": "Backend Engineer",
-        "links": {
-            "github": "https://github.com/dzakwanIrfan",
-            "website": "https://dzakwan-irfan.vercel.app"
-        }
-    }
+  {
+    "id": "1",
+    "image": "https://avatars.githubusercontent.com/u/116086341?v=4",
+    "name": "Nicholas Hasian",
+    "username": "@sharclen5",
+    "role": "Frontend Engineer",
+    "links": [
+      {
+        "label": "Github",
+        "url": "https://github.com/sharclen5"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "image": "https://avatars.githubusercontent.com/u/66806914?v=4",
+    "name": "Dzakwan Irfan",
+    "username": "@dzakone",
+    "role": "Backend Engineer",
+    "links": [
+      {
+        "label": "Github",
+        "url": "https://github.com/dzakwanIrfan"
+      },
+      {
+        "label": "Website",
+        "url": "https://dzakwan-irfan.vercel.app"
+      }
+    ]
+  }
 ]

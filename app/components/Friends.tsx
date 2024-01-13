@@ -33,9 +33,9 @@ const Friends = async () => {
                         <Heading size='lg' fontSize={20} lineHeight={1.2} fontWeight='bold'>{friend.name}</Heading>
                         <Text fontSize={14}>{friend.username}</Text>
                         <Text fontSize={14}>{friend.role}</Text>
-                        {/* <HStack spacing={6}>
-                            {friend.links.map((link) => (
-                                <Link href={link} key={link} target='_blank'>
+                        <HStack spacing={6}>
+                            {Object.entries(friend.links).map(([key, value]) => (
+                                <Link href={value} key={key} target='_blank'>
                                     <Box
                                         as='button'
                                         display='inline-flex'
@@ -47,12 +47,11 @@ const Friends = async () => {
                                             textDecoration: 'underline'
                                         }}
                                     >
-                                        {link}
-                                        <FiExternalLink className='ml-2' />
+                                        {key} <FiExternalLink className='ml-2' />
                                     </Box>
                                 </Link>
                             ))}
-                        </HStack> */}
+                        </HStack>
                     </Box>
                 ))}
             </div>
