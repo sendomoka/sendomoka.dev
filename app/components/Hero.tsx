@@ -1,7 +1,7 @@
 'use client'
 import { Box, Heading, Image, Text, Tooltip, IconButton, Link } from '@chakra-ui/react'
 import React from 'react'
-import { FaLinkedin, FaGithub, FaInstagram, FaMedium } from 'react-icons/fa'
+import { FaLinkedin, FaGithub, FaInstagram, FaMedium, FaDiscord } from 'react-icons/fa'
 import { FaXTwitter, FaDribbble } from 'react-icons/fa6'
 
 const Hero = () => {
@@ -11,7 +11,8 @@ const Hero = () => {
         { label: 'Medium', icon: <FaMedium />, route: 'https://medium.com/@sendomoka' },
         { label: 'Dribbble', icon: <FaDribbble />, route: 'https://dribbble.com/sendomoka' },
         { label: 'Twitter X', icon: <FaXTwitter />, route: 'https://twitter.com/sendomoka' },
-        { label: 'Instagram', icon: <FaInstagram />, route: 'https://www.instagram.com/jehianth' },
+        { label: 'Instagram', icon: <FaInstagram />, route: 'https://instagram.com/jehianth' },
+        { label: 'Discord', icon: <FaDiscord />, route: 'https://discordapp.com/users/589304761921306638' },
     ]
     const [isScaled, setIsScaled] = React.useState(false)
     const [isMobile, setIsMobile] = React.useState(false)
