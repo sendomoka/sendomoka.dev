@@ -17,7 +17,7 @@
     "image": "https://avatars.githubusercontent.com/u/66806914?v=4",
     "name": "Dzakwan Irfan",
     "username": "@dzakone",
-    "role": "Backend Engineer",
+    "role": "Frontend Engineer",
     "links": [
       {
         "label": "Github",
@@ -26,6 +26,23 @@
       {
         "label": "Website",
         "url": "https://dzakwan-irfan.vercel.app"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "image": "https://avatars.githubusercontent.com/u/60311483?v=4",
+    "name": "Bintang Yosua",
+    "username": "@bintangyosua",
+    "role": "Backend Engineer",
+    "links": [
+      {
+        "label": "Github",
+        "url": "https://github.com/bintangyosua"
+      },
+      {
+        "label": "Website",
+        "url": "https://bintangyosua.vercel.app"
       }
     ]
   }
